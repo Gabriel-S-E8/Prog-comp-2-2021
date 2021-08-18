@@ -64,9 +64,9 @@ let gerenciaredes = () => {
         }
         
     }
-    console.log
 
     // Ex2) O programa retorna quantos posts foram feitos em todas as redes sociais.
+    
 
     // Ex3) O usuario informa o login e o programa retorna quantos posts ele fez.
 
