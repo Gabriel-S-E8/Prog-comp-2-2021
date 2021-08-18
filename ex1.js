@@ -66,10 +66,23 @@ let gerenciaredes = () => {
     }
 
     // Ex2) O programa retorna quantos posts foram feitos em todas as redes sociais.
-    
+    let qtdpo = []
+
+    for (let i = 0; i < 5; i++) { // Para percorrer as redes sociais.
+        
+        qtdpo[i] = 0
+        for (let j = 0; j < 5; j++) {
+                if (rede[i].codigo == usu[i].codigo) {
+                    
+                    qtdpo[i] = qtdpo[i] + usu[i].post
+                }
+        }
+    }
+    // adicinou os posts de uma rede social em 1 espeço do vetor
+    console.log(`A Qtde de post da rede social ${rede[i].codigo} é ${qtdpo[i]}`)
 
     // Ex3) O usuario informa o login e o programa retorna quantos posts ele fez.
-
+    
     // Ex4) O programa retorna quantos posts foram feitos por cada usuario.
 
 }
