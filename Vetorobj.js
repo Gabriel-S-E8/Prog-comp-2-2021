@@ -32,7 +32,7 @@ let gerenciaredes = () => {
         let j = 0 // índice do vetor de redes sociais
         while (!achou && j<3 ){ // sai ou porque achou ou porque acabou o vetor
             if (vetorRedesSociais[j].codigo == objeto.codigoRedeSocial){ // achamos
-                vetorUsuarios.push(objeto)// inserimos
+                usu.push(objeto)// inserimos
                 achou = true
                 alert(`Usuário inserido com sucesso`)
             }
