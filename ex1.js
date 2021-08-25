@@ -107,6 +107,26 @@ let gerenciaredes = () => {
     }
 
     // Ex4) O programa retorna quantos posts foram feitos por cada usuario.
-    
+    let usuposts = []
+    for (let i = 0; i < 5; i++) {
+
+        let achou = false
+
+        for(let j = 0; j < usuposts.length; j++) { // verifica se o usuario existe
+
+            if (usu[i].login == usuposts[i].login) { // usuario já existe
+                // soma a qtde de posts do usuario
+                usuposts[j].qtde = usuposts[j].qtde + usu[i].posts
+                achou = true
+            }
+        }
+    }
+    // Vetor ainda não existe no usu posts então vamos criar
+    if (achou) { // vamos criar usuario no vetor
+        usuposts.push({
+            login: usu[i].login,
+            qtde: usu[i].post
+        })
+    }
 
 }
