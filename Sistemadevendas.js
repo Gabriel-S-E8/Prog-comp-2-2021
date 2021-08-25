@@ -35,7 +35,7 @@ let Sistemadevendas = () => {
                 }
                 // verificar se o vendedor já vendou o mesmo produto
                 let achouvenda = false
-                for (let i = 0;  < vendas.length; i++) {
+                for (let i = 0; i < vendas.length; i++) {
                    if ((vendas[i].codigo == objvenda.codigo) && (vendas[i].mes == objvenda.mes)) {
                        achouvenda = true // encontrei - então não se pode cadastrar
                    }
