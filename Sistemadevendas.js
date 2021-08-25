@@ -1,11 +1,12 @@
 let Sistemadevendas = () => {
     let opcao
     let vendedores = []
+    let vendas = []
     do {
-        opcao = prompt(`Informe: \n1. Cadastrar Vendedor \n2. Cadastrar venda \n3. Sair`)
+        opcao = Number(prompt(`Informe: \n1. Cadastrar Vendedor \n2. Cadastrar venda \n3. Sair`))
         switch (opcao) {
             case 1: let objeto = {
-                codigo: prompt(Number(`Informe o código`)),
+                codigo: Number(prompt(`Informe o código`)),
                 nome: prompt(`Informe o nome`),
                 rg: prompt(`Informe o rg`)
                 }
@@ -25,9 +26,26 @@ let Sistemadevendas = () => {
                 else{
                     alert(`Vendedor já existe`)
                 }
+                console.log(vendedores)
                 break;
-            case 2:
-
+            case 2: let objvenda = {
+                    codigo: Number(prompt(`Informe o codigo do vendedor`)),
+                    mes: Number(prompt(`Informe mês da venda`)),
+                    Valor: Number(prompt(`Informe o que foi vendido`))
+                }
+                // verificar se o vendedor já vendou o mesmo produto
+                let achouvenda = false
+                for (let i = 0;  < vendas.length; i++) {
+                   if ((vendas[i].codigo == objvenda.codigo) && (vendas[i].mes == objvenda.mes)) {
+                       achouvenda = true // encontrei - então não se pode cadastrar
+                   }
+                }
+                if (!achouvenda) {
+                    vendas.push(objvenda)
+                }
+                else{
+                    alert(`Já existe venda desse vendedor nesse mes`)
+                }
                 break;
             case 3: alert(`O Programa será finalizado`)
                 break;
