@@ -2,7 +2,7 @@ let gerenciaredes = () => {
     let rede = []; // Vetor de rede social
 
     // Cadastro Rede Social
-    for (let i = 0; i <= 5; i++)
+    for (let i = 0; i <= 3; i++)
     objrede = {
         codigo: Number(prompt(`Informe o Codigo da rede Social: `)),
         nome: prompt(`Informe o Nome da rede Social: `),
@@ -17,7 +17,7 @@ let gerenciaredes = () => {
     let i = 0 // indice do vetor
 
     // Cadastro de Usuarios
-    while (i < 5) {
+    while (i < 3) {
     
         let usu1 = {
             login: prompt(`Informe Seu login: `),
@@ -27,7 +27,7 @@ let gerenciaredes = () => {
         }
         //Só faremos isso se a rede social existir
         let achou = false // assumo que não encontrei a rede
-        while (!achou && j < 5) { // sai poeque achou ou acabou o vetor
+        while (!achou && j < 3) { // sai poeque achou ou acabou o vetor
             if (rede[j].codigo == usu.codigo) {
                 usu.push(usu1) // vai inserir o objeto apos comfirmar se ele é verdadeiro
                 achou = true
@@ -50,7 +50,7 @@ let gerenciaredes = () => {
     // Percorre procurando o vetor
     conta = 0
 
-    for (let i = 0; i < 5; i++) { //Percorre o Vetor de usuarios
+    for (let i = 0; i < 3; i++) { //Percorre o Vetor de usuarios
         if (usu[i].codigo == codigo) { // encontrei
 
             conta = conta = conta + usu[i].posts
@@ -68,10 +68,10 @@ let gerenciaredes = () => {
     // Ex2) O programa retorna quantos posts foram feitos em todas as redes sociais.
     let qtdpo = []
 
-    for (let i = 0; i < 5; i++) { // Para percorrer as redes sociais.
+    for (let i = 0; i < 3; i++) { // Para percorrer as redes sociais.
         
         qtdpo[i] = 0
-        for (let j = 0; j < 5; j++) {
+        for (let j = 0; j < 3; j++) {
                 if (rede[i].codigo == usu[i].codigo) {
                     
                     qtdpo[i] = qtdpo[i] + usu[i].post
@@ -83,32 +83,28 @@ let gerenciaredes = () => {
 
     // Ex3) O usuario informa o login e o programa retorna quantos posts ele fez.
 
-    for (let i = 0; i < 5; i++) { // Para percorrer as redes sociais.
-       
-        // Solicitar que o usuario informe o login
-        let login = prompt(`Informe o login do usuario desejado`)
+    // Solicitar que o usuario informe o login
+    let login = prompt(`Informe o login do usuario desejado`)
 
-        //Procura o login no vetor de Usuarios
-        let somap = o
-        let achou = false // Não encontrei o usuario
-        for (let  i = 0; i < 5; i++) {
-            if (login == usu[i].login) { //Achei o usuario procurado
-                somap = somap + usu[i].posts
-                achou = true // Achou o usuario
-            }
+    //Procura o login no vetor de Usuarios
+    let somap = o
+    let achou = false // Não encontrei o usuario
+    for (let  i = 0; i < 3; i++) {
+        if (login == usu[i].login) { //Achei o usuario procurado
+            somap = somap + usu[i].posts
+            achou = true // Achou o usuario
         }
-        if (achou) {
-            console.log(`O usuario com login ${login} realizou ${somap}`)
-        }
-        else{
-            alert(`Usuario não encontrado.`)
-        }
-        
+    }
+    if (achou) {
+        console.log(`O usuario com login ${login} realizou ${somap}`)
+    }
+    else{
+        alert(`Usuario não encontrado.`)
     }
 
     // Ex4) O programa retorna quantos posts foram feitos por cada usuario.
     let usuposts = []
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 3; i++) {
 
         let achou = false
 
