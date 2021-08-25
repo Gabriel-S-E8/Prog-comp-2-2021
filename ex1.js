@@ -82,7 +82,31 @@ let gerenciaredes = () => {
     console.log(`A Qtde de post da rede social ${rede[i].codigo} é ${qtdpo[i]}`)
 
     // Ex3) O usuario informa o login e o programa retorna quantos posts ele fez.
-    
+
+    for (let i = 0; i < 5; i++) { // Para percorrer as redes sociais.
+       
+        // Solicitar que o usuario informe o login
+        let login = prompt(`Informe o login do usuario desejado`)
+
+        //Procura o login no vetor de Usuarios
+        let somap = o
+        let achou = false // Não encontrei o usuario
+        for (let  i = 0; i < 5; i++) {
+            if (login == usu[i].login) { //Achei o usuario procurado
+                somap = somap + usu[i].posts
+                achou = true // Achou o usuario
+            }
+        }
+        if (achou) {
+            console.log(`O usuario com login ${login} realizou ${somap}`)
+        }
+        else{
+            alert(`Usuario não encontrado.`)
+        }
+        
+    }
+
     // Ex4) O programa retorna quantos posts foram feitos por cada usuario.
+    
 
 }
