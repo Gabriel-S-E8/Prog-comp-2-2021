@@ -17,30 +17,29 @@ let gerenciaredes = () => {
     let i = 0 // indice do vetor
 
     // Cadastro de Usuarios
-    while (i < 3) {
+    let usu = []
+    let i = 0
     
-        let usu1 = {
-            login: prompt(`Informe Seu login: `),
-            nome: prompt(`Informe seu nome: `),
-            codigo: prompt(`Informe o codigo da rede Social: `),
-            posts: Number(prompt(`Informe A quantidade de posts do usuario: `))
+    while (i<3){
+        let objeto = {
+            login: prompt(`Informe o login do usuário`),
+            nome: prompt(`Informe o nome do usuário`),
+            codigoRedeSocial: Number(prompt(`Informe o código da rede social`)),
+            qtdePosts: Number(prompt(`Informe a qtde de Posts`))
         }
-        //Só faremos isso se a rede social existir
-        let achou = false // assumo que não encontrei a rede
-        while (!achou && j < 3) { // sai poeque achou ou acabou o vetor
-            if (rede[j].codigo == usu.codigo) {
-                usu.push(usu1) // vai inserir o objeto apos comfirmar se ele é verdadeiro
+        // só faremos isso se a rede social existir
+        let achou = false // assumo que não encontrei a rede social
+        let j = 0 // índice do vetor de redes sociais
+        while (!achou && j<3 ){ // sai ou porque achou ou porque acabou o vetor
+            if (vetorRedesSociais[j].codigo == objeto.codigoRedeSocial){ // achamos
+                vetorUsuarios.push(objeto)// inserimos
                 achou = true
-                alert(`usuario cadastrado com sucesso`)
+                alert(`Usuário inserido com sucesso`)
             }
-            j++
-            
+            j++ // prepara para ir ao próximo elemento
         }
-
-        if (codigo != rede.codigo) {
-
-            alert(`Codigo invalido usuario não aceito`)
-
+        if (!achou){ // acabou o vetor
+            alert(`Usuário não inserido, pois a Rede social não foi encontrada`)
         }
         i++
     }
@@ -79,7 +78,7 @@ let gerenciaredes = () => {
         }
     }
     // adicinou os posts de uma rede social em 1 espeço do vetor
-    console.log(`A Qtde de post da rede social ${rede[i].codigo} é ${qtdpo[i]}`)
+    alert(`A Qtde de post da rede social ${rede[i].codigo} é ${qtdpo[i]}`)
 
     // Ex3) O usuario informa o login e o programa retorna quantos posts ele fez.
 
@@ -124,5 +123,6 @@ let gerenciaredes = () => {
             qtde: usu[i].post
         })
     }
+    console.log(usuposts)
 
 }
