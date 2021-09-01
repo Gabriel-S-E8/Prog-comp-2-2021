@@ -3,7 +3,7 @@ let Sistemadevendas = () => {
     let vendedores = []
     let vendas = []
     do {
-        opcao = Number(prompt(`Informe: \n1. Cadastrar Vendedor \n2. Cadastrar venda \n3. Sair`))
+        opcao = Number(prompt(`Informe: \n1. Cadastrar Vendedor \n2. Cadastrar venda \n3. Procurar venda \n. Sair`))
         switch (opcao) {
             case 1: let objeto = {
                 codigo: Number(prompt(`Informe o código`)),
@@ -47,7 +47,20 @@ let Sistemadevendas = () => {
                     alert(`Já existe venda desse vendedor nesse mes`)
                 }
                 break;
-            case 3: alert(`O Programa será finalizado`)
+            case 3: let codigo = Number(prompt(`Informe o codigo do vendedor`));
+                    let mes = Number(prompt(`Informe o mês da venda`))
+                    let achoupv = false
+                    for (let i = 0;  < vendas.length; i++) {
+                        if ((vendas[i].codigo == codigo) && (vendas[i].mes == mes)) {
+                           console.log(`O valor da venda do funcionário ${codigo} no mês ${mes} foi ${vendas[i].Valor}`)
+                           achoupv = true 
+                        }
+                    }
+                    if (!achou) {
+                        console.log(`Venda não encontrada para este funcionário este mês.`)
+                    }
+                break;
+            case 4: alert(`O Programa será finalizado`)
                 break;
             default: alert(`Opção invalida`)
         }
